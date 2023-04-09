@@ -1,0 +1,2395 @@
+{
+	"info": {
+		"_postman_id": "7d968149-a593-4c44-9bdc-0c67f682215c",
+		"name": "Reading",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12040224"
+	},
+	"item": [
+		{
+			"name": "books",
+			"item": [
+				{
+					"name": "Create a book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Leyla İle Macnun\",\n  \"price\": 25.5,\n  \"stock\": 5,\n  \"description\": \"string\",\n  \"publisher\": \"string\",\n  \"publicationDate\": \"2023-04-09\",\n  \"pages\": 26,\n  \"type\": \"FICTION\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/books",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"books"
+							]
+						},
+						"description": "Create a new book with the given details."
+					},
+					"response": [
+						{
+							"name": "Book created successfully",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"sed reprehenderit labore\",\n  \"price\": 43636495.40398306,\n  \"stock\": -81601183,\n  \"type\": \"SCIENCE_FICTION\",\n  \"description\": \"ea velit voluptate eiusmod sint\",\n  \"publisher\": \"fugiat elit dolor magna\",\n  \"publicationDate\": \"1985-01-14\",\n  \"pages\": -33709064\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/books",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"books"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"data\": {},\n  \"message\": \"esse in ut ipsum\",\n  \"success\": true\n}"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"sed reprehenderit labore\",\n  \"price\": 43636495.40398306,\n  \"stock\": -81601183,\n  \"type\": \"SCIENCE_FICTION\",\n  \"description\": \"ea velit voluptate eiusmod sint\",\n  \"publisher\": \"fugiat elit dolor magna\",\n  \"publicationDate\": \"1985-01-14\",\n  \"pages\": -33709064\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/books",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"books"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": \"206 PARTIAL_CONTENT\",\n  \"message\": \"magna dolore in sed\"\n}"
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"sed reprehenderit labore\",\n  \"price\": 43636495.40398306,\n  \"stock\": -81601183,\n  \"type\": \"SCIENCE_FICTION\",\n  \"description\": \"ea velit voluptate eiusmod sint\",\n  \"publisher\": \"fugiat elit dolor magna\",\n  \"publicationDate\": \"1985-01-14\",\n  \"pages\": -33709064\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/books",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"books"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"data\": {},\n  \"message\": \"esse in ut ipsum\",\n  \"success\": true\n}"
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"sed reprehenderit labore\",\n  \"price\": 43636495.40398306,\n  \"stock\": -81601183,\n  \"type\": \"SCIENCE_FICTION\",\n  \"description\": \"ea velit voluptate eiusmod sint\",\n  \"publisher\": \"fugiat elit dolor magna\",\n  \"publicationDate\": \"1985-01-14\",\n  \"pages\": -33709064\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/books",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"books"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"data\": {},\n  \"message\": \"esse in ut ipsum\",\n  \"success\": true\n}"
+						},
+						{
+							"name": "Validation errors in the request body",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"sed reprehenderit labore\",\n  \"price\": 43636495.40398306,\n  \"stock\": -81601183,\n  \"type\": \"SCIENCE_FICTION\",\n  \"description\": \"ea velit voluptate eiusmod sint\",\n  \"publisher\": \"fugiat elit dolor magna\",\n  \"publicationDate\": \"1985-01-14\",\n  \"pages\": -33709064\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/books",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"books"
+									]
+								}
+							},
+							"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"data\": {},\n  \"message\": \"esse in ut ipsum\",\n  \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "Update book stock",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"stock\": 85\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/books/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"books",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1",
+									"description": "(Required) "
+								}
+							]
+						},
+						"description": "Update the stock of an existing book with the given ID."
+					},
+					"response": [
+						{
+							"name": "Book stock updated successfully",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"stock\": -68440495\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/books/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"books",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1151467",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"data\": {},\n  \"message\": \"esse in ut ipsum\",\n  \"success\": true\n}"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"stock\": -68440495\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/books/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"books",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1151467",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": \"206 PARTIAL_CONTENT\",\n  \"message\": \"magna dolore in sed\"\n}"
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"stock\": -68440495\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/books/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"books",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1151467",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"data\": {},\n  \"message\": \"esse in ut ipsum\",\n  \"success\": true\n}"
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"stock\": -68440495\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/books/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"books",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1151467",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"data\": {},\n  \"message\": \"esse in ut ipsum\",\n  \"success\": true\n}"
+						},
+						{
+							"name": "Book not found",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"stock\": -68440495\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/books/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"books",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1151467",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"data\": {},\n  \"message\": \"esse in ut ipsum\",\n  \"success\": true\n}"
+						},
+						{
+							"name": "Validation errors in the request body",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"stock\": -68440495\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/books/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"books",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1151467",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"data\": {},\n  \"message\": \"esse in ut ipsum\",\n  \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "Get book details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/books/detail/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"books",
+								"detail",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1151467",
+									"description": "(Required) "
+								}
+							]
+						},
+						"description": "Get the details of an existing book with the given ID."
+					},
+					"response": [
+						{
+							"name": "Book details retrieved successfully",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/books/detail/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"books",
+										"detail",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1151467",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"data\": {},\n  \"message\": \"esse in ut ipsum\",\n  \"success\": true\n}"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/books/detail/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"books",
+										"detail",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1151467",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": \"206 PARTIAL_CONTENT\",\n  \"message\": \"magna dolore in sed\"\n}"
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/books/detail/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"books",
+										"detail",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1151467",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"data\": {},\n  \"message\": \"esse in ut ipsum\",\n  \"success\": true\n}"
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/books/detail/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"books",
+										"detail",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1151467",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"data\": {},\n  \"message\": \"esse in ut ipsum\",\n  \"success\": true\n}"
+						},
+						{
+							"name": "Book not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/books/detail/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"books",
+										"detail",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1151467",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"data\": {},\n  \"message\": \"esse in ut ipsum\",\n  \"success\": true\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "orders",
+			"item": [
+				{
+					"name": "Add a new order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJidXJhazc4IiwiZXhwIjoxNjgxMDgzMDQxLCJpYXQiOjE2ODEwNjUwNDEsImp0aSI6ImJ1cmFrNzgifQ.LCYc-GusQXVdxetGoJy9Ad4lbMNEiPoQeQq90a0SDpcoTPXYGZqaoxuYyibpeYOpbI-uINypTy9dQU1OlsN_UA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"bookId\": 1,\n  \"quantity\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/orders",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Order added successfully",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"bookId\": 20409300,\n  \"quantity\": 68529041\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/orders",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"orders"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"data\": {},\n  \"message\": \"esse in ut ipsum\",\n  \"success\": true\n}"
+						},
+						{
+							"name": "Invalid input",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"bookId\": 20409300,\n  \"quantity\": 68529041\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/orders",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"orders"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": \"206 PARTIAL_CONTENT\",\n  \"message\": \"magna dolore in sed\"\n}"
+						}
+					]
+				},
+				{
+					"name": "get Order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/orders/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"orders",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Order found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/orders/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"orders",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1151467",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"data\": {},\n  \"message\": \"esse in ut ipsum\",\n  \"success\": true\n}"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/orders/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"orders",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1151467",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": \"206 PARTIAL_CONTENT\",\n  \"message\": \"magna dolore in sed\"\n}"
+						},
+						{
+							"name": "Order not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/orders/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"orders",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1151467",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"data\": {},\n  \"message\": \"esse in ut ipsum\",\n  \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "Get orders by date range",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/orders/list?startDate=1961-01-10&endDate=2025-01-10",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"orders",
+								"list"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "1961-01-10",
+									"description": "(Required) "
+								},
+								{
+									"key": "endDate",
+									"value": "2025-01-10",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Orders found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/orders/list?startDate=1961-01-10&endDate=1961-01-10",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"orders",
+										"list"
+									],
+									"query": [
+										{
+											"key": "startDate",
+											"value": "1961-01-10"
+										},
+										{
+											"key": "endDate",
+											"value": "1961-01-10"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"data\": {},\n  \"message\": \"esse in ut ipsum\",\n  \"success\": true\n}"
+						},
+						{
+							"name": "Invalid input",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/orders/list?startDate=1961-01-10&endDate=1961-01-10",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"orders",
+										"list"
+									],
+									"query": [
+										{
+											"key": "startDate",
+											"value": "1961-01-10"
+										},
+										{
+											"key": "endDate",
+											"value": "1961-01-10"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": \"206 PARTIAL_CONTENT\",\n  \"message\": \"magna dolore in sed\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "customers",
+			"item": [
+				{
+					"name": "list",
+					"item": [
+						{
+							"name": "find Order For Customer",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{bearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/customers/list/:customerId?pageNumber=1&limit=20&direction=ASC&orderColumn=id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customers",
+										"list",
+										":customerId"
+									],
+									"query": [
+										{
+											"key": "pageNumber",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "20"
+										},
+										{
+											"key": "direction",
+											"value": "ASC"
+										},
+										{
+											"key": "orderColumn",
+											"value": "id",
+											"description": "id,customer_id,book_id,quantity,totalPrice,status,version"
+										}
+									],
+									"variable": [
+										{
+											"key": "customerId",
+											"value": "1",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/customers/list/:customerId?pageNumber=-86114976&limit=-86114976&direction=ASC&orderColumn=sit aliq",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"customers",
+												"list",
+												":customerId"
+											],
+											"query": [
+												{
+													"key": "pageNumber",
+													"value": "-86114976"
+												},
+												{
+													"key": "limit",
+													"value": "-86114976"
+												},
+												{
+													"key": "direction",
+													"value": "ASC"
+												},
+												{
+													"key": "orderColumn",
+													"value": "sit aliq"
+												}
+											],
+											"variable": [
+												{
+													"key": "customerId",
+													"value": "1151467",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"data\": {},\n  \"message\": \"et tempor\",\n  \"page\": 67240313,\n  \"limit\": 7490882,\n  \"count\": -49997661,\n  \"success\": true\n}"
+								},
+								{
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/customers/list/:customerId?pageNumber=-86114976&limit=-86114976&direction=ASC&orderColumn=sit aliq",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"customers",
+												"list",
+												":customerId"
+											],
+											"query": [
+												{
+													"key": "pageNumber",
+													"value": "-86114976"
+												},
+												{
+													"key": "limit",
+													"value": "-86114976"
+												},
+												{
+													"key": "direction",
+													"value": "ASC"
+												},
+												{
+													"key": "orderColumn",
+													"value": "sit aliq"
+												}
+											],
+											"variable": [
+												{
+													"key": "customerId",
+													"value": "1151467",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": \"206 PARTIAL_CONTENT\",\n  \"message\": \"magna dolore in sed\"\n}"
+								}
+							]
+						},
+						{
+							"name": "find Order For Me",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{bearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/customers/list/me?pageNumber=1&limit=20&direction=ASC&orderColumn=id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customers",
+										"list",
+										"me"
+									],
+									"query": [
+										{
+											"key": "pageNumber",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "20"
+										},
+										{
+											"key": "direction",
+											"value": "ASC"
+										},
+										{
+											"key": "orderColumn",
+											"value": "id",
+											"description": "id,customer_id,book_id,quantity,totalPrice,status,version"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/customers/list/me?pageNumber=-86114976&limit=-86114976&direction=ASC&orderColumn=sit aliq",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"customers",
+												"list",
+												"me"
+											],
+											"query": [
+												{
+													"key": "pageNumber",
+													"value": "-86114976"
+												},
+												{
+													"key": "limit",
+													"value": "-86114976"
+												},
+												{
+													"key": "direction",
+													"value": "ASC"
+												},
+												{
+													"key": "orderColumn",
+													"value": "sit aliq"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"data\": {},\n  \"message\": \"et tempor\",\n  \"page\": 67240313,\n  \"limit\": 7490882,\n  \"count\": -49997661,\n  \"success\": true\n}"
+								},
+								{
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/customers/list/me?pageNumber=-86114976&limit=-86114976&direction=ASC&orderColumn=sit aliq",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"customers",
+												"list",
+												"me"
+											],
+											"query": [
+												{
+													"key": "pageNumber",
+													"value": "-86114976"
+												},
+												{
+													"key": "limit",
+													"value": "-86114976"
+												},
+												{
+													"key": "direction",
+													"value": "ASC"
+												},
+												{
+													"key": "orderColumn",
+													"value": "sit aliq"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": \"206 PARTIAL_CONTENT\",\n  \"message\": \"magna dolore in sed\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "create Customer",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"burak78\",\n  \"password\": \"Burak78+\",\n  \"email\": \"burak@abc.com\",\n  \"adress\": [\n    {\n      \"street\": \"Ankara\",\n      \"city\": \"Ankara\",\n      \"state\": \"Ankaraa\",\n      \"zipCode\": \"06170\"\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/customers",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"customers"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"adress\": [\n    {\n      \"city\": \"mollit dolore cupidatat nisi\",\n      \"state\": \"dolore velit\",\n      \"street\": \"cupidatat elit\",\n      \"zipCode\": \"in dolor ut voluptate sint\"\n    },\n    {\n      \"city\": \"ut Lorem veniam eiusmod esse\",\n      \"state\": \"aliqua in sunt consequat\",\n      \"street\": \"aliquip elit irure et nostrud\",\n      \"zipCode\": \"sed in\"\n    }\n  ],\n  \"email\": \"magna id officia\",\n  \"password\": \"/6M<&7~)\",\n  \"username\": \"Pxvl5\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/customers",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customers"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"data\": {},\n  \"message\": \"esse in ut ipsum\",\n  \"success\": true\n}"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"adress\": [\n    {\n      \"city\": \"mollit dolore cupidatat nisi\",\n      \"state\": \"dolore velit\",\n      \"street\": \"cupidatat elit\",\n      \"zipCode\": \"in dolor ut voluptate sint\"\n    },\n    {\n      \"city\": \"ut Lorem veniam eiusmod esse\",\n      \"state\": \"aliqua in sunt consequat\",\n      \"street\": \"aliquip elit irure et nostrud\",\n      \"zipCode\": \"sed in\"\n    }\n  ],\n  \"email\": \"magna id officia\",\n  \"password\": \"/6M<&7~)\",\n  \"username\": \"Pxvl5\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/customers",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customers"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": \"206 PARTIAL_CONTENT\",\n  \"message\": \"magna dolore in sed\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "statistics/order",
+			"item": [
+				{
+					"name": "Get monthly order statistics",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/statistics/order",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"statistics",
+								"order"
+							]
+						},
+						"description": "Returns monthly order statistics for the system, restricted to admin users"
+					},
+					"response": [
+						{
+							"name": "Monthly order statistics retrieved successfully",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/statistics/order",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"statistics",
+										"order"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"data\": {},\n  \"message\": \"esse in ut ipsum\",\n  \"success\": true\n}"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/statistics/order",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"statistics",
+										"order"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": \"206 PARTIAL_CONTENT\",\n  \"message\": \"magna dolore in sed\"\n}"
+						},
+						{
+							"name": "Unauthorized access",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/statistics/order",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"statistics",
+										"order"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"data\": {},\n  \"message\": \"esse in ut ipsum\",\n  \"success\": true\n}"
+						},
+						{
+							"name": "Forbidden access",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/statistics/order",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"statistics",
+										"order"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"data\": {},\n  \"message\": \"esse in ut ipsum\",\n  \"success\": true\n}"
+						},
+						{
+							"name": "Internal server error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/statistics/order",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"statistics",
+										"order"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"data\": {},\n  \"message\": \"esse in ut ipsum\",\n  \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "Clear order statistics cache",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/statistics/order/cache",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"statistics",
+								"order",
+								"cache"
+							]
+						},
+						"description": "Clears the cached monthly order statistics for the system, restricted to admin users"
+					},
+					"response": [
+						{
+							"name": "Order statistics cache cleared successfully",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/statistics/order/cache",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"statistics",
+										"order",
+										"cache"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"data\": {},\n  \"message\": \"esse in ut ipsum\",\n  \"success\": true\n}"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/statistics/order/cache",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"statistics",
+										"order",
+										"cache"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": \"206 PARTIAL_CONTENT\",\n  \"message\": \"magna dolore in sed\"\n}"
+						},
+						{
+							"name": "Unauthorized access",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/statistics/order/cache",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"statistics",
+										"order",
+										"cache"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"data\": {},\n  \"message\": \"esse in ut ipsum\",\n  \"success\": true\n}"
+						},
+						{
+							"name": "Forbidden access",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/statistics/order/cache",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"statistics",
+										"order",
+										"cache"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"data\": {},\n  \"message\": \"esse in ut ipsum\",\n  \"success\": true\n}"
+						},
+						{
+							"name": "Internal server error",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/statistics/order/cache",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"statistics",
+										"order",
+										"cache"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"data\": {},\n  \"message\": \"esse in ut ipsum\",\n  \"success\": true\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Authenticate",
+			"item": [
+				{
+					"name": "Authenticate a user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var res = pm.response.json();\r",
+									"pm.environment.set('bearerToken', res.data.token);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"admin\",\n    \"password\": \"Admin123+\"\n}\n/*{\n    customer\n \"username\": \"burak78\",\n  \"password\": \"Burak78+\",\n\n}*/",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/authenticate",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"authenticate"
+							]
+						},
+						"description": "Authenticate a user with the given username and password."
+					},
+					"response": [
+						{
+							"name": "Authentication successful",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"password\": \"K#\\\\jA/rVV0}\",\n  \"username\": \"PPE6t6b4OWln\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/authenticate",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"authenticate"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"data\": {},\n  \"message\": \"esse in ut ipsum\",\n  \"success\": true\n}"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"password\": \"K#\\\\jA/rVV0}\",\n  \"username\": \"PPE6t6b4OWln\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/authenticate",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"authenticate"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": \"206 PARTIAL_CONTENT\",\n  \"message\": \"magna dolore in sed\"\n}"
+						},
+						{
+							"name": "Invalid credentials",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"password\": \"K#\\\\jA/rVV0}\",\n  \"username\": \"PPE6t6b4OWln\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/authenticate",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"authenticate"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"data\": {},\n  \"message\": \"esse in ut ipsum\",\n  \"success\": true\n}"
+						},
+						{
+							"name": "User disabled",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"password\": \"K#\\\\jA/rVV0}\",\n  \"username\": \"PPE6t6b4OWln\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/authenticate",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"authenticate"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"data\": {},\n  \"message\": \"esse in ut ipsum\",\n  \"success\": true\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}
