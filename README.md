@@ -38,7 +38,7 @@ customer:
    "username": "burak78",
   "password": "Burak78+",
 }
-/
+<br>
 Swagger:
 ----------------
 http://localhost:8080/swagger-ui/index.html
