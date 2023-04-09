@@ -34,9 +34,8 @@ admin:
     "password": "Admin123+"
 }
 customer:
-{
-    
-    "username": "burak78",
+{  
+   "username": "burak78",
   "password": "Burak78+",
 }
 /
