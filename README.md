@@ -28,12 +28,12 @@ prefix:reading
 
 JWT (JSON Web Tokens): 
 ----------------
-admin:
+admin ---
 {
     "username": "admin",
     "password": "Admin123+"
 }<br>
-customer:
+customer ---
 {  
    "username": "burak78",
   "password": "Burak78+",
