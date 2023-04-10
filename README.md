@@ -33,7 +33,7 @@ admin ---
     "username": "admin",
     "password": "Admin123+"
 }<br>
-customer ---(create customeri bu body ile çağırabilirsiniz)
+customer ---(You can call create customer api with this body)
 {
   "username": "burak78",
   "password": "Burak78+",
