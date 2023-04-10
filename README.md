@@ -33,10 +33,19 @@ admin ---
     "username": "admin",
     "password": "Admin123+"
 }<br>
-customer ---
-{  
-   "username": "burak78",
-  "password": "Burak78+"
+customer ---(create customeri bu body ile çağırabilirsiniz)
+{
+  "username": "burak78",
+  "password": "Burak78+",
+  "email": "burak@abc.com",
+  "adress": [
+    {
+      "street": "Ankara",
+      "city": "Ankara",
+      "state": "Ankaraa",
+      "zipCode": "06170"
+    }
+  ]
 }
 <br>
 <br>
