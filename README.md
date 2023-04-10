@@ -1,14 +1,13 @@
-# reading
+# README
 
-The postman folder contains the collection and can be accessed via swagger.
+The postman folder contains the collections and can be accessed via Swagger.
 
 1- Customer can be created via /customers<br>
-2- Tokens can be purchased via /authenticate. (BeaberToken is defined as globalVeriable via Postman. It will be sufficient to log in to access the services.)<br>
+2- Tokens can be obtainedd via /authenticate. (BeaberToken is defined as globalVariable via Postman. It will be sufficient to login to access the services.)<br>
 OR<br>
 (Adminuser information is given below.)<br>
 3- Method Level Security is used. Admin and customer user information is given below.<br>
-4- MongoDB and redis are also revived in terms of competency demonstration<br>
-
+4- MongoDB and Redis are used for NoSQL db and cache purposes.
 
 
 H2 Database:
