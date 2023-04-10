@@ -36,7 +36,7 @@ admin ---
 customer ---
 {  
    "username": "burak78",
-  "password": "Burak78+",
+  "password": "Burak78+"
 }
 <br>
 <br>
